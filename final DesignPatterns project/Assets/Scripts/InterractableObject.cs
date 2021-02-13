@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum InterractionTypes { Accessable,Pickable}
+public enum InterractionTypes { Accessable,Pickable,Pressable }
 public abstract class InterractableObject : MonoBehaviour
 {
     internal  InterractionTypes MyInterractType;

@@ -12,8 +12,6 @@ public class Key : PickAbleObject
     {
 
         MyInterractType = InterractionTypes.Pickable;
-        Debug.Log("InitCommited");
-
     }
     public override void SubInit()
     {

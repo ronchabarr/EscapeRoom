@@ -13,7 +13,6 @@ public class Barricade : AccessableObject
     {
 
         MyInterractType = InterractionTypes.Accessable;
-        Debug.Log("InitCommited");
     }
 
     public barricade GetBarracades

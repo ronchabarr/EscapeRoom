@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public abstract class PickAbleObject : InterractableObject
 {
+    
     public override void ReactToInterraction()
     {
         GetPickedUp();
     }
     public void GetPickedUp()
     {
-        Debug.Log("keyPickedUp");
         TurnOff();
     }
     public void TurnOff()

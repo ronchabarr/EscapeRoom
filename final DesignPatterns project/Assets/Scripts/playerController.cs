@@ -106,6 +106,10 @@ public class playerController : MonoBehaviour
                 PickUpItem(interractableObject.GetComponent<PickAbleObject>());
                 break;
 
+            case InterractionTypes.Pressable:
+                PressObj(interractableObject.GetComponent<PressableObject>());
+                break;
+
         }
 
             
@@ -139,6 +143,10 @@ public class playerController : MonoBehaviour
         Debug.Log(accessApllied);
           
         
+    }
+    public void PressObj(PressableObject _pressableObject)
+    {
+        _pressableObject.GetInterracted();
     }
 
  

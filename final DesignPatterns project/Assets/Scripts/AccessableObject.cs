@@ -14,7 +14,6 @@ public abstract class AccessableObject : InterractableObject
             if (barricade == GetComponent<Barricade>().GetBarracades)
             {
                 GetInterracted();
-                Debug.Log("yo");
                 return true;
             }
             else return false;   
