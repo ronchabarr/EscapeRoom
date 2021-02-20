@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 
 public class playerController : MonoBehaviour
@@ -13,6 +14,11 @@ public class playerController : MonoBehaviour
 
     public float downRayDistance;
     Camera viewCam;
+
+    Text text;
+    public string successText = "You are in!";
+    public string emptyText = " ";
+
 
     [SerializeField] float interractRange;
     private PlayerInventory _playerInventory;
@@ -29,6 +35,8 @@ public class playerController : MonoBehaviour
         _playerInventory = GetComponent<PlayerInventory>();
         hAxis = 0;
         vAxis = 0;
+
+        text = GetComponentInChildren<Text>();
     }
 
     // Update is called once per frame
@@ -134,9 +142,20 @@ public class playerController : MonoBehaviour
                 keyHolder = found.GetComponent<Key>();
                 if (_accessableObject.TryAccess(keyHolder.Destinbarracade))
                 {
-                    Debug.Log("yes i got in");
+                    text.text = successText;
+                    //Debug.Log("yes i got in");
                     accessApllied = true;
                     _accessableObject.GetInterracted();
+
+                    StartCoroutine(TextEscape());
+
+                    IEnumerator TextEscape()
+                    {
+                        yield return new WaitForSecondsRealtime(3);
+
+                        text.text = emptyText;
+                    }
+
                     break;
                 }
             }
