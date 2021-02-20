@@ -95,7 +95,7 @@ public class playerController : MonoBehaviour
 
         InterractableObject interractableObject= hit.collider.GetComponent<InterractableObject>();
 
-
+        
         switch (interractableObject.MyInterractType)
         {
             case InterractionTypes.Accessable: 
@@ -117,6 +117,7 @@ public class playerController : MonoBehaviour
     }
     public void PickUpItem(PickAbleObject _pickAbleObject)
     {
+        
         _playerInventory.AddPickableObj(_pickAbleObject, _pickAbleObject.gameObject);
         _pickAbleObject.GetInterracted();
         

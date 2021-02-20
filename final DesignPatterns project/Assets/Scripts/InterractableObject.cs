@@ -11,10 +11,7 @@ public abstract class InterractableObject : MonoBehaviour
 
 
     // Update is called once per frame
-    private void Start()
-    {
-        Init();
-    }
+    
    
     public void GetInterracted()
     {
@@ -22,5 +19,8 @@ public abstract class InterractableObject : MonoBehaviour
     }
     public abstract void ReactToInterraction();
     public abstract void Init();
+  
+
+
    
 }
