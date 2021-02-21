@@ -8,8 +8,12 @@ public class PasswordMachine : MonoBehaviour
     [SerializeField] Pannel[] setSequence;
     int currentInserted=0;
     [SerializeField] AccessableObject barricade;
+    SoundManager soundManager;
 
-
+    private void Start()
+    {
+        soundManager = SoundManager.Instance;
+    }
 
     public void PannelPressed(Pannel pannel)
     {
@@ -37,8 +41,9 @@ public class PasswordMachine : MonoBehaviour
         if (CorrectMatches >= setSequence.Length)
         {
             CorrectPassword();
+        soundManager.PasswordCheck(true);
         }
-        else { WrongPassword(); CorrectMatches = 0; currentInserted = 0; }
+        else { WrongPassword(); CorrectMatches = 0; currentInserted = 0; soundManager.PasswordCheck(false); }
 
     }
     public void CorrectPassword()
@@ -47,6 +52,7 @@ public class PasswordMachine : MonoBehaviour
     }
     public void WrongPassword()
     {
+        
         Restart();
     }
     public void Restart()

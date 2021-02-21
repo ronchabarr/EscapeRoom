@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Box : PressableObject
 {
+    SoundManager _soundManager;
     [SerializeField] GameObject boxcover;
      private Collider col;
     public override void Init()
@@ -15,10 +16,12 @@ public class Box : PressableObject
     {
         boxcover.SetActive(false);
         col.enabled = false;
+        _soundManager.BoxOpen();
     }
 
     void Start()
     {
+        _soundManager = SoundManager.Instance;
         MyInterractType = InterractionTypes.Pressable;
         col = GetComponent<Collider>();
     }

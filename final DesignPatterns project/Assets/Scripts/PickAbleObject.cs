@@ -5,9 +5,10 @@ using UnityEngine;
 
 public abstract class PickAbleObject : InterractableObject
 {
-    
+    SoundManager _soundManager;
     public override void ReactToInterraction()
     {
+        _soundManager = SoundManager.Instance;
         GetPickedUp();
     }
     public void GetPickedUp()
@@ -17,6 +18,8 @@ public abstract class PickAbleObject : InterractableObject
     public void TurnOff()
     {
         gameObject.SetActive(false);
+        _soundManager.KeyPickup();
+        
     }
     public override void Init()
     {

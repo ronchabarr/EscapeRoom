@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour
 
         currentLookingPos += smoothedVelocity;
 
-        transform.localRotation = Quaternion.AngleAxis(-currentLookingPos.y, Vector3.right);
+        transform.localRotation = Quaternion.AngleAxis(Mathf.Clamp(-currentLookingPos.y, -70,70), Vector3.right);
 
         player.transform.localRotation = Quaternion.AngleAxis(currentLookingPos.x, player.transform.up);
     }

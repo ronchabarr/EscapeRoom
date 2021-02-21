@@ -6,13 +6,14 @@ public enum InterractionTypes { Accessable,Pickable,Pressable }
 public abstract class InterractableObject : MonoBehaviour
 {
     internal  InterractionTypes MyInterractType;
+   
 
     // Start is called before the first frame update
-
+ 
 
     // Update is called once per frame
-    
-   
+
+
     public void GetInterracted()
     {
         ReactToInterraction();

@@ -8,6 +8,7 @@ public class Pannel : PressableObject
     [SerializeField] Material pressedMat;
      Material originMat;
     MeshRenderer mesh;
+    SoundManager _soundManager;
     public override void Init()
     {
         
@@ -29,6 +30,7 @@ public class Pannel : PressableObject
 
     public override void Pressed()
     {
+        _soundManager.PressPannel();
         _passwordMachine.PannelPressed(this);
         Debug.Log(gameObject.name);
     }
@@ -36,8 +38,8 @@ public class Pannel : PressableObject
     // Start is called before the first frame update
     void Start()
     {
-
         InitPannel();
+        _soundManager = SoundManager.Instance;
        
     }
     public void InitPannel()
