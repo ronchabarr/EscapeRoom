@@ -16,6 +16,7 @@ public class playerController : MonoBehaviour
     Camera viewCam;
 
     Text text;
+    Text timer;
     public string successText = "You are in!";
     public string emptyText = " ";
 
@@ -37,6 +38,7 @@ public class playerController : MonoBehaviour
         vAxis = 0;
 
         text = GetComponentInChildren<Text>();
+        timer = GetComponentInChildren<Text>();
     }
 
     // Update is called once per frame
