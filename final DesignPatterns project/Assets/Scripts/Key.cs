@@ -15,6 +15,7 @@ public class Key : PickAbleObject
     }
     public override void SubInit()
     {
+        //;sodrfujhgpseio
      
     }
 
